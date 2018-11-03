@@ -3,18 +3,57 @@ body{
     margin: 0px;
     background-color: rgb(206, 206, 206);
 }
+.sistem{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.card-shadow{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4)
+}
 .upper-tab{
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
     width: 100%;
-    height: 80px;
     background-color: #003159;
+    box-sizing: border-box;
 }
 .sis-logo{
-    float: left;
-    width: 130px;
-    height: 50px;
+    width: 110px;
+    height: 40px;
     background-color: grey;
-    top: 50%;
+}
+.user-set{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background-color: grey;
+    border-radius: 8px;
+    padding: 3px;
+    cursor: pointer;
+}
+.user-name{
+    display: block;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    padding: 3px 10px;
+    font-weight: normal;
+    font-size: 15px;
+}
+.user-img{
+    float: left;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0px 5px;
+}
+.lateral-menu{
+    display: block;
+    width: 250px;
+    height: 100vh;
+    background-color: #003159;
 }
