@@ -43,9 +43,9 @@ body{
 }
 .sis-place{
     color: white;
-    border-left: 1px solid white;
+    border-left: 2px solid white;
     padding: 0px 0px 11px 5px;
-    margin-right: 590px
+    margin-right: 593px
 }
 .user-set{
     display: flex;
