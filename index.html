@@ -1,88 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Gradus - web view</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="shortcut icon" href="./00_sources/01_img/01_visual/icon-gradus.png" type="image/x-icon">
-    </head>
-    <body>
-        <div id="sis" class="sistem">
 
-            <!-- cabecalho -->
-            <header class="upper-tab card-shadow">
-                <div class="sis-upper-panel">
-                    <img src="./00_sources/01_img/01_visual/logo-gradus-branco.png" alt="Logo do sistema" srcset="">
-                    <h1 class="sis-place">
-                        Hospital Dr. Eudásio Barroso
-                    </h1>
-                </div>
-                <div class="user-set card-shadow">
-                    <h3 class="user-name">Usuário Logado</h3>
-                    <img src="./00_sources/01_img/icone.png" alt="Incone do usuário" class="user-img">
-                </div>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <title>Gradus&trade; - web view</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./00_sources/01_img/01_visual/icon-gradus.png" type="image/x-icon">
+</head>
 
-            <!-- painel inferior -->
-            <div class="app-body">
+<body>
+    <div id="sis" class="sistem">
 
-                <!-- menu lateral -->
-                <aside class="lateral-menu">
-                    <div class="op-painel">
+        <!-- cabecalho -->
+        <header class="upper-tab card-shadow">
+            <div class="sis-upper-panel">
+                <img src="./00_sources/01_img/01_visual/logo-gradus-branco.png" alt="Logo do sistema" srcset="">
+                <h1 class="sis-place">
+                    Hospital Dr. Eudásio Barroso
+                </h1>
+            </div>
+            <div class="user-set card-shadow">
+                <h3 class="user-name">Usuário Logado</h3>
+                <img src="./00_sources/01_img/icone.png" alt="Incone do usuário" class="user-img">
+            </div>
+        </header>
 
-                        <!-- opções do menu - esquerda -->
-                        <div class="lateral-op" title="Ir para Painel Principal">
-                            <img src="" alt="op" class="op-img">
-                            <h4 class="op-name">Painel Principal</h4>
-                        </div>
-                        <div class="lateral-op" title="Ir para Alas do hospital">
-                            <img src="" alt="op" class="op-img">
-                            <h4 class="op-name">Alas do Hospital</h4>
-                        </div>
-                        <div class="lateral-op" title="Exibir equipe médica">
-                            <img src="" alt="op" class="op-img">
-                            <h4 class="op-name">Equipe Médica</h4>
-                        </div>
-                        <div class="lateral-op" title="Exibir os paciente">
-                            <img src="" alt="op" class="op-img">
-                            <h4 class="op-name">Pacientes</h4>
-                        </div>
+        <!-- painel inferior -->
+        <div class="app-body">
 
+            <!-- menu lateral -->
+            <aside class="lateral-menu">
+                <div class="op-painel">
+
+                    <!-- opções do menu - esquerda -->
+                    <div class="lateral-op" title="Ir para Painel Principal">
+                        <img src="" alt="op" class="op-img">
+                        <h4 class="op-name">Painel Principal</h4>
+                    </div>
+                    <div class="lateral-op" title="Ir para Alas do hospital">
+                        <img src="" alt="op" class="op-img">
+                        <h4 class="op-name">Alas do Hospital</h4>
+                    </div>
+                    <div class="lateral-op" title="Exibir equipe médica">
+                        <img src="" alt="op" class="op-img">
+                        <h4 class="op-name">Equipe Médica</h4>
+                    </div>
+                    <div class="lateral-op" title="Exibir os paciente">
+                        <img src="" alt="op" class="op-img">
+                        <h4 class="op-name">Pacientes</h4>
                     </div>
 
-                </aside>
+                </div>
 
-                <!-- paleta de opções - direita -->
-                <section class="main-panel">
+            </aside>
 
-                    <div class="main-panel-op card-shadow">
-                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png" >
+            <!-- paleta principal - direita -->
+            <section class="main-panel">
+
+                <!-- trilha de migalhas -->
+                <header id="breadscrumb" class="breadscrumb">
+                    <div class="step">
+                        <span>Home &gt;</span>
+                    </div>
+                    <div class="step">
+                        <span>Alas &gt;</span>
+                    </div>
+                </header>
+
+                <!-- painel das opções -->
+                <div id="op-panel" class="op-panel">
+                    <!-- painel de opções -->
+                    <!-- <div class="main-panel-op card-shadow">
+                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">
                         <h4 class="op-name"> Opção 01</h4>
                     </div>
                     <div class="main-panel-op card-shadow">
-                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">                        
+                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">
                         <h4 class="op-name"> Opção 02</h4>
                     </div>
                     <div class="main-panel-op card-shadow">
                         <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">
-                        
+
                         <h4 class="op-name"> Opção 03</h4>
                     </div>
                     <div class="main-panel-op card-shadow">
-                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">                        
+                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">
                         <h4 class="op-name"> Opção 04</h4>
                     </div>
                     <div class="main-panel-op card-shadow">
-                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">                       
+                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">
                         <h4 class="op-name"> Opção 05</h4>
+                    </div> -->
+
+                    <!-- lista gereal? -->
+                    <div id="list" class="list">
+                        <div class="list-element">
+                            Nome 01
+                        </div><div class="list-element">
+                            Nome 02
+                        </div><div class="list-element">
+                            Nome 03
+                        </div><div class="list-element">
+                            Nome 04 
+                        </div>
                     </div>
+                </div>
 
-                </section>
-            </div>
-
+            </section>
         </div>
-        
-        <script src="./script.js" ></script>
-        <script src="../02_libs/02_jQuery/jquery-3.3.1.min.js"></script>
-    </body>
+
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="../02_libs/02_jQuery/jquery-3.3.1.min.js"></script>
+</body>
+
 </html>
