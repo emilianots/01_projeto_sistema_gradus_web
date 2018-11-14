@@ -76,3 +76,4 @@ function connection() {
 }
 
 connection() */
+alert("Adicionado:\nlogo clicável;\nlistagem de pacientes do banco de dados\n \nAdições de elementos dinamicamente criados\n \nPrimeiros testes com dinamicidade e jQuery")

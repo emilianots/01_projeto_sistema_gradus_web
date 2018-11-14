@@ -40,7 +40,7 @@ let pacientes = [
     id: 10
   },
   {
-    nome: "José Francico Raimundo da Silva",
+    nome: "José Francisco Raimundo da Silva",
     id: 11
   }
 ];
