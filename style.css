@@ -55,7 +55,7 @@ body{
 }
 
 .sistem{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -74,6 +74,8 @@ body{
     justify-content: space-between;
     padding: 10px 30px;
     width: 100%;
+    max-height: 60px;
+    height: fit-content;
     background-color: #046db5;
     box-sizing: border-box;
     user-select: none;
@@ -85,8 +87,8 @@ body{
     justify-content: space-between;
     width: 484px;
 }
-.sis-upper-panel img{
-    width: 110px;
+.sistem-logo{
+    width: 130px;
     cursor: pointer;
 }
 .sis-place{
@@ -132,6 +134,7 @@ body{
 .app-body{
     width: 100%; /*para possivel adição de botão de menu - estilizar essa classe*/
     box-sizing: border-box;
+    height: 100%;
 }
 
 /* 
@@ -147,6 +150,7 @@ body{
     box-sizing: border-box;
     overflow: hidden;
     user-select: none;
+    color: white;
 }
 .lateral-op{
     width: 100%;
@@ -164,10 +168,16 @@ body{
     background-color: #012847;
     
 }
-.lateral-op img{
+/* .lateral-op img{
+    
+} */
+
+.lateral-op i{
+    font-size: 15px;
+    margin-right: 10px;
     display: block;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     margin: 0px 20px 0px 0px;
 }
 .lateral-op h4{
@@ -175,7 +185,6 @@ body{
     margin: 0px;
     text-align: left;
     font-weight: normal;
-    color: white;
 }
 
 /* 
@@ -184,7 +193,7 @@ body{
 .main-panel{
     float: left;
     width: calc(100% - 250px);
-    height: 84vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -201,8 +210,9 @@ body{
     display: flex;
     float: left;
     flex-direction: row;
+    align-content: center;
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 10px 15px;
     border-bottom: 1px solid rgb(206, 206, 206);
 }
 .breadscrumb .step{
@@ -223,9 +233,10 @@ body{
 .op-panel{
     width: 100%;
     height: 100%;
-    margin-top: 15px;
+    margin: 5px 0px 0px 5px;
     overflow-y: scroll;
     font-family: cabinRegular, sans-serif;
+    color: rgb(63, 63, 63);
 }
 
 .main-panel-op{

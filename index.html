@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Gradus&trade; - web view</title>
+    <title>Gradus&trade; | web view</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./00_sources/01_img/01_visual/icon-gradus.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <header class="upper-tab card-shadow">
             
             <div class="sis-upper-panel">
-                <img id="sistem-logo" src="./00_sources/01_img/01_visual/logo-gradus-branco.png" alt="Logo do sistema" srcset="">
+                <img id="sistem-logo" class="sistem-logo" src="./00_sources/01_img/01_visual/logo-gradus-branco.png" alt="Logo do sistema" srcset="">
                 <h1 class="sis-place">
                     Hospital Dr. Eudásio Barroso
                 </h1>
@@ -32,22 +33,22 @@
             <!-- menu lateral -->
             <aside class="lateral-menu">
                 <div class="op-painel">
-
+                    <p id="rel">djdj</p>
                     <!-- opções do menu - esquerda -->
                     <div id="menu-painel-principal"class="lateral-op" title="Ir para Painel Principal">
-                        <img src="" alt="op" class="op-img">
+                        <i class="fas fa-chalkboard"></i>
                         <h4 class="op-name">Painel Principal</h4>
                     </div>
                     <div id="menu-alas" class="lateral-op" title="Ir para Alas do hospital">
-                        <img src="" alt="op" class="op-img">
+                        <i class="fas fa-sitemap"></i>
                         <h4 class="op-name">Alas do Hospital</h4>
                     </div>
                     <div id="menu-equipe" class="lateral-op" title="Exibir equipe médica">
-                        <img src="" alt="op" class="op-img">
+                        <i class="fas fa-user-md"></i>                        
                         <h4 class="op-name">Equipe Médica</h4>
                     </div>
                     <div id="menu-pacientes" class="lateral-op" title="Exibir os pacientes">
-                        <img src="" alt="op" class="op-img">
+                        <i class="fas fa-address-card"></i>
                         <h4 class="op-name">Pacientes</h4>
                     </div>
 
@@ -61,7 +62,7 @@
                 <!-- trilha de migalhas -->
                 <header id="breadscrumb" class="breadscrumb">
                     <div class="step">
-                        <span>Home &gt;</span>
+                        <span>Home <i class="fas fa-chevron-right"></i></span> 
                     </div>
                 </header>
 
@@ -90,10 +91,12 @@
                         <h4 class="op-name"> Opção 05</h4>
                     </div> -->
 
-                    <!-- lista gereal? -->
+                    <!-- lista geral? -->
+                    <div id="options-ala" class="options-ala">
 
-                    <!-- <div id="list" class="list">
-                        <div class="list-element">
+                    </div>
+                    <div id="list" class="list">
+                       <!--  <div class="list-element">
                             Nome 01
                         </div><div class="list-element">
                             Nome 02
@@ -101,8 +104,8 @@
                             Nome 03
                         </div><div class="list-element">
                             Nome 04 
-                        </div>
-                    </div> -->
+                        </div> -->
+                    </div>
                 </div>
 
             </section>

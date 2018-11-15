@@ -1,22 +1,35 @@
-
-window.onload = function () {
-    goHome(nomeAlas)
-}
 // variáveis globais importantes ----
 var nomeAlas = ["Ambulátório", "Centro Cirúrgico", "Clínica Médica", "Emergência"];
 
-$("#menu-pacientes").click(function () {
-    $("#op-panel").empty();
-    addNameList(pacientes);
-})
-$("#sistem-logo").click(function () {
-    goHome(nomeAlas)
-})
+window.onload = function () {
+    goHome(nomeAlas);
+    starTime();
+}
 
+function starTime() {
+    var hoje = new Date();
+    var h = hoje.getHours();
+    var m = hoje.getMinutes();
+    var s = hoje.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    $("#rel").text(h + ": " + m + ": " + s);
+    var t = setTimeout(starTime, 500);
+
+}
+
+function checkTime(elem) {
+    if (elem < 10) {
+        elem = "0" + elem;
+    }
+    return elem;
+}
 
 function goHome(lista) {
     //futuramente mexer com a trilha de migalhas tambem
-    $("#op-panel").empty();
+    //criação das alas dinamicamente
+    $("#list").empty();
+    console.log($("#list"))
 
     for (let elem of lista) {
         let mainPanelOp = document.createElement("div");
@@ -29,7 +42,7 @@ function goHome(lista) {
         mainPanelOp.appendChild(img);
         mainPanelOp.appendChild(texto);
 
-        $("#op-panel").append(mainPanelOp);
+        $("#options-ala").append(mainPanelOp);
     }
 }
 
@@ -43,37 +56,28 @@ function addTrilha(nome) {
 
 // listar nomes ----
 function addNameList(lista) {
-    let novaLista = document.createElement("div");
-    novaLista.classList.add("list");
+    //let novaLista = document.createElement("div");
+    //novaLista.classList.add("list");
     for (const elem of lista) {
         let nomePaciente = document.createElement("div");
-
         nomePaciente.classList.add("list-element");
         nomePaciente.innerHTML = elem.nome;
-        novaLista.appendChild(nomePaciente);
+        //novaLista.appendChild(nomePaciente);
+        $("#list").append(nomePaciente);
+        console.log(nomePaciente)
     }
-    $("#op-panel").append(novaLista);
 }
 
-/* for (let elem of listas) {
-    console.log(elem.nome);
-} */
-/*
-for (let i = 0; i < 20; i++){
-    addNameList(i);
-} */
+// interações
+$("#menu-pacientes").click(function() {
+    $("#options-ala").hide();
+    $("#list").empty();
+    addNameList(pacientes);
+    $("#list").show();
+});
 
-/* let url = "http://localhost:3000/pacientes";
-function connection() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if ((this.readyState = 4) && (this.status == 200)) {
-            console.log(this.responseText);
-        }
-    }
-    xhttp.open("GET", url, true);
-    xhttp.send();
-}
-
-connection() */
-alert("Adicionado:\nlogo clicável;\nlistagem de pacientes do banco de dados\n \nAdições de elementos dinamicamente criados\n \nPrimeiros testes com dinamicidade e jQuery")
+$("#sistem-logo").click(function() {
+    //goHome(nomeAlas);
+    $("#options-ala").show();
+    $("#list").empty();
+});
