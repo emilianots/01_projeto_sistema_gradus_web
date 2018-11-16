@@ -51,7 +51,7 @@ body{
     font-family: cabinBold, sans-serif;
     color: #2d2d2d;
     margin: 0px;
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(238, 238, 238);
 }
 
 .sistem{
@@ -60,7 +60,7 @@ body{
     overflow: hidden;
 }
 .card-shadow{
-    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1), -1px -1px 7px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.05), -1px -1px 7px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -206,7 +206,7 @@ body{
 
 ==== trilha de migalhas
 */
-.breadscrumb{
+.breadcrumb{
     display: flex;
     float: left;
     flex-direction: row;
@@ -215,13 +215,13 @@ body{
     padding: 10px 10px 10px 15px;
     border-bottom: 1px solid rgb(206, 206, 206);
 }
-.breadscrumb .step{
+.breadcrumb .step{
     color: #046db5;
     margin-right: 10px;
     min-width: 30px;
     user-select: none;
 }
-.breadscrumb .step:hover{
+.breadcrumb .step:hover{
     color: #189af1;
     cursor: pointer;
     text-decoration: underline;
@@ -241,13 +241,13 @@ body{
 
 .main-panel-op{
     display: inline-block;
-    width: 195px;
+    width: 170px;
     text-align: center;
     background-color: #f0f0f0;
-    border-radius: 15px;
+    border-radius: 10px;
     box-sizing: border-box;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     cursor: pointer;
     user-select: none;
     border: 2px solid transparent;
@@ -262,13 +262,29 @@ body{
 }
 
 /* 
+==== opções do painel home ====
+*/
+
+.home{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.qtd-pessoal{
+    display: flex;
+    background-color: grey;
+    width: 100%;
+    height: 50px;
+}
+
+/* 
 ==== lista de elementos===
 */
 .list{
     width: 100%;
     border-radius: 3px;
-    height: 100%;
-    padding-left: 10px;
+    height: fit-content;
+    padding: 10px 0px 0px 10px;
     box-sizing: border-box;
 }
 .list .list-element{
