@@ -52,6 +52,7 @@ body{
     color: #2d2d2d;
     margin: 0px;
     background-color: rgb(238, 238, 238);
+    letter-spacing: 0.5px;
 }
 
 .sistem{
@@ -60,7 +61,7 @@ body{
     overflow: hidden;
 }
 .card-shadow{
-    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.05), -1px -1px 7px rgba(0, 0, 0, 0.05);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1), -1px -1px 7px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -135,6 +136,7 @@ body{
     width: 100%; /*para possivel adição de botão de menu - estilizar essa classe*/
     box-sizing: border-box;
     height: 100%;
+    font-family: cabinRegular, sans-serif;
 }
 
 /* 
@@ -162,11 +164,11 @@ body{
     box-sizing: border-box;
     cursor: pointer;
     border-bottom: 1px solid rgb(65, 76, 138);
+    border-right: 4px solid transparent;
     transition: background 100ms;
 }
 .lateral-op:hover{
     background-color: #012847;
-    
 }
 /* .lateral-op img{
     
@@ -230,16 +232,14 @@ body{
 /*
 ==== painel de opções
 */
-.op-panel{
+.panel-alas{
     width: 100%;
     height: 100%;
-    margin: 5px 0px 0px 5px;
-    overflow-y: scroll;
-    font-family: cabinRegular, sans-serif;
+    box-sizing: border-box;
     color: rgb(63, 63, 63);
 }
 
-.main-panel-op{
+.panel-alas-op{
     display: inline-block;
     width: 170px;
     text-align: center;
@@ -252,12 +252,12 @@ body{
     user-select: none;
     border: 2px solid transparent;
 }
-.main-panel-op:hover{
+.panel-alas-op:hover{
     border-color: #84cef3;
     box-shadow: 1px 1px 7px rgba(57, 169, 226, 0.5), -1px -1px 7px rgba(57, 169, 226, 0.5);
 
 }
-.main-panel-op img{
+.panel-alas-op img{
     width: 40px;
 }
 
@@ -265,16 +265,60 @@ body{
 ==== opções do painel home ====
 */
 
+/* cabeçalho */
 .home{
     display: block;
     width: 100%;
     height: 100%;
+    padding: 15px 15px 0px 15px;
+    box-sizing: border-box;
+    user-select: none;
+    color: #4b4b4b;
 }
-.qtd-pessoal{
+.panel-status-bar{
     display: flex;
-    background-color: grey;
     width: 100%;
-    height: 50px;
+    height: 60px;
+    margin-bottom: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(197, 197, 197);
+}
+.main-panel-name{
+    display: block;
+    font-family: cabinRegular;
+
+}
+.sistem-number{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+.sistem-number div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.sistem-number div h3{
+    display: block;
+    font-size: 13px;
+    font-family: cabinRegular;
+}
+
+/* seção das alas desse painel  */
+
+.main-alas{
+    width: 200px;/* 
+    background-color: #003159; */
+    height: 100%;
 }
 
 /* 
@@ -282,15 +326,16 @@ body{
 */
 .list{
     width: 100%;
+    height: 100%;
     border-radius: 3px;
-    height: fit-content;
-    padding: 10px 0px 0px 10px;
+    padding: 15px 15px 0px 15px;
     box-sizing: border-box;
+    overflow: scroll;
 }
 .list .list-element{
     width: 100%;
     border-bottom: 1px solid rgb(197, 197, 197);
-    padding: 10px 5px;
+    padding: 10px 7px;
     background-color: white;
     cursor: pointer;
     box-sizing: border-box;

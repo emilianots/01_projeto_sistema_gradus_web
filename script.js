@@ -5,7 +5,7 @@ var alas = null;
 var pacientes = null;
 var equipeMedica = null;
 
-/* window.onload = function () {
+window.onload = function () {
     //connection(URL);
     //goHome(alas);
     //addNameList(pacientes)
@@ -13,12 +13,15 @@ var equipeMedica = null;
     //relógio();
 
 
-    $("#options-ala").empty();
+    /* $("#options-ala").empty();
     getAlas(URL);
     home(alas);
     $("#options-ala").show();
-    $("#list").empty();
-} */
+    $("#list").empty(); */
+    $("#panel-alas").hide();
+    $("#list").hide();
+    //$("#home").hide();
+}
 
 function relógio() {
     var hoje = new Date();
@@ -48,17 +51,17 @@ function home(lista) {
     //console.log($("#list"))
 
     for (let elem of lista) {
-        let mainPanelOp = document.createElement("div");
-        mainPanelOp.classList.add("main-panel-op", "card-shadow");
+        let panelAlas = document.createElement("div");
+        panelAlas.classList.add("panel-alas-op", "card-shadow");
 
         //let img = document.createElement("img");
         //img.src = "./00_sources/01_img/01_visual/icon-gradus-branco.png";
         let texto = document.createElement("h4");
         texto.innerHTML = elem.alaNome;
         //mainPanelOp.appendChild(img);
-        mainPanelOp.appendChild(texto);
+        panelAlas.appendChild(texto);
 
-        $("#options-ala").append(mainPanelOp);
+        $("#options-ala").append(panelAlas);
     }
 }
 
@@ -74,6 +77,8 @@ function addNameList(lista) {;
     }
 }
 
+
+//requisições get gerais
 function getAlas(url) {
     $.ajax({
         type: "GET",
@@ -115,11 +120,27 @@ function getEquipeMedica(url) {
     $("#list").empty();
 }); */
 
-$("#menu-pacientes").click(function() {
+
+$("#menu-alas").click(function () {
+    $("#menu-alas").css({ borderRight: "4px solid white", backgroundColor: "#012847" });
+    $("#menu-pacientes").css({ borderRight: "4px solid transparent", backgroundColor: "transparent" });
+    $("#menu-equipe").css({ borderRight: "4px solid transparent", backgroundColor: "transparent" });
+})
+
+$("#menu-equipe").click(function () {
+    $("#menu-equipe").css({ borderRight: "4px solid white", backgroundColor: "#012847" });
+    $("#menu-pacientes").css({ borderRight: "4px solid transparent", backgroundColor: "transparent" });
+    $("#menu-alas").css({ borderRight: "4px solid transparent", backgroundColor: "transparent" });
+})
+
+$("#menu-pacientes").click(function () {
+    $("#menu-pacientes").css({ borderRight: "4px solid white", backgroundColor: "#012847"});
+    $("#menu-equipe").css({ borderRight: "4px solid transparent", backgroundColor: "transparent" });
+    $("#menu-alas").css({ borderRight: "4px solid transparent", backgroundColor: "transparent" });
+
     $("#options-ala").hide();
     $("#list").empty();
-    //let url = URL + "pacientes"
-    getAlas(URL + "pacientes");
+    getPacientes(URL);
     addNameList(pacientes);
     $("#list").show();
 });
