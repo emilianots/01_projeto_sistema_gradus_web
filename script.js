@@ -10,7 +10,7 @@ window.onload = function () {
     //goHome(alas);
     //addNameList(pacientes)
     //console.table(alas);
-    //relógio();
+    relógio();
 
 
     /* $("#options-ala").empty();
@@ -18,9 +18,9 @@ window.onload = function () {
     home(alas);
     $("#options-ala").show();
     $("#list").empty(); */
-    $("#panel-alas").hide();
+    //$("#panel-alas").hide();
     $("#list").hide();
-    //$("#home").hide();
+    $("#home-main").hide();
 }
 
 function relógio() {
@@ -28,12 +28,20 @@ function relógio() {
     var h = hoje.getHours();
     var m = hoje.getMinutes();
     var s = hoje.getSeconds();
+    var d = hoje.getDate();
+    var ms = hoje.getMonth() + 1;
 
     m = verify(m);
     s = verify(s);
+    d = verify(d);
+    ms = verify(ms);
+    if (ms == 11) {
+        ms = "novembro"
+    }
 
-    $("#rel").text(h + ": " + m + ": " + s);
-    var t = setTimeout(relógio, 500);
+    $("#rel").text(h + "h :" + m +"m");
+    $("#date").text(d + " de " + ms + " |");
+    var t = setTimeout(relógio, 1000);
 }
 
 function verify(elem) {
@@ -144,3 +152,39 @@ $("#menu-pacientes").click(function () {
     addNameList(pacientes);
     $("#list").show();
 });
+
+$("#sistem-logo").click(function () {
+    location.reload(true);
+})
+
+
+
+
+// função de printar um elemento html completo
+document.onkeyup = function (e) {
+    if (e.key == "") {
+        $("#main-alas").printThis({
+          debug: false, // show the iframe for debugging
+          importCSS: true, // import parent page css
+          importStyle: true, // import style tags
+          printContainer: true, // print outer container/$.selector
+          loadCSS:
+            "/home/riley/Documentos/designDigital/4_semestre/5_projeto_integrado_2/00_dev_sistema_gradus/01_projeto_sistema_gradus_web/style.css", // path to additional css file - use an array [] for multiple
+          pageTitle: "", // add title to print page
+          removeInline: false, // remove inline styles from print elements
+          removeInlineSelector: "*", // custom selectors to filter inline styles. removeInline must be true
+          printDelay: 333, // variable print delay
+          header: null, // prefix to html
+          footer: null, // postfix to html
+          base: false, // preserve the BASE tag or accept a string for the URL
+          formValues: true, // preserve input/form values
+          canvas: false, // copy canvas content
+          doctypeString: "<!DOCTYPE html>", // enter a different doctype for older markup
+          removeScripts: false, // remove script tags from print content
+          copyTagClasses: false, // copy classes from the html & body tag
+          beforePrintEvent: null, // callback function for printEvent in iframe
+          beforePrint: null, // function called before iframe is filled
+          afterPrint: null // function called before iframe is removed
+        });
+    }
+}

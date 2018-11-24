@@ -20,6 +20,24 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face{
+    font-family: AsapRegular;
+    src: url("./00_sources/03_fonts/Asap/Asap-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: AsapBold;
+    src: url("./00_sources/03_fonts/Asap/Asap-Bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: AsapSemiBuld;
+    src: url("./00_sources/03_fonts/Cabin-SemiBold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* 
 configurações de scroll
@@ -48,7 +66,6 @@ configurações de scroll
 }
 
 body{
-    font-family: cabinBold, sans-serif;
     color: #2d2d2d;
     margin: 0px;
     background-color: rgb(238, 238, 238);
@@ -75,41 +92,65 @@ body{
     justify-content: space-between;
     padding: 10px 30px;
     width: 100%;
-    max-height: 60px;
+    max-height: 65px;
     height: fit-content;
     background-color: #046db5;
     box-sizing: border-box;
     user-select: none;
+    font-family: AsapSemiBold, sans-serif;
 }
 .sis-upper-panel{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
+    padding: 20px 0px;
     width: 484px;
 }
 .sistem-logo{
     width: 130px;
+    float: left;
     cursor: pointer;
+    margin-right: 50px;
 }
 .sis-place{
     display: block;
+    float: left;
     margin: 0px;
     color: white;
     font-size: 20px;
     font-weight: normal;
-    border-left: 1px solid white;
     padding: 0px 0px 11px 5px;
 }
+.sis-status-set{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
+    color: white;
+}
+
+.sis-time{
+    display: block;
+    float: left;
+    background-color: grey;
+    padding: 10px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: #003159;
+    text-align: center;
+}
+
+
 .user-set{
     display: flex;
     align-items: center;
     width: fit-content;
     background-color: #003159;
-    border-radius: 8px;
-    padding: 3px;
+    border-radius: 5px;
+    padding: 7px;
     cursor: pointer;
     user-select: none;
+}
+.user-set:hover{
+    background-color: #004985;
 }
 .user-name{
     display: block;
@@ -136,7 +177,7 @@ body{
     width: 100%; /*para possivel adição de botão de menu - estilizar essa classe*/
     box-sizing: border-box;
     height: 100%;
-    font-family: cabinRegular, sans-serif;
+    text-rendering:optimizeLegibility;
 }
 
 /* 
@@ -153,6 +194,7 @@ body{
     overflow: hidden;
     user-select: none;
     color: white;
+    font-family: AsapSemiBold, sans-serif;
 }
 .lateral-op{
     width: 100%;
@@ -170,9 +212,6 @@ body{
 .lateral-op:hover{
     background-color: #012847;
 }
-/* .lateral-op img{
-    
-} */
 
 .lateral-op i{
     font-size: 15px;
@@ -202,6 +241,7 @@ body{
     justify-content: flex-start;
     align-content: flex-start;
     box-sizing: border-box;
+    font-family: AsapSemiBold, sans-serif;
 }
 
 /* 
@@ -241,19 +281,19 @@ body{
 
 .panel-alas-op{
     display: inline-block;
-    width: 170px;
+    width: 200px;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     border-radius: 10px;
     box-sizing: border-box;
     margin: 10px;
-    padding: 10px;
+    padding: 15px 10px;
     cursor: pointer;
     user-select: none;
     border: 2px solid transparent;
 }
 .panel-alas-op:hover{
-    border-color: #84cef3;
+    border-color: #4caddd;
     box-shadow: 1px 1px 7px rgba(57, 169, 226, 0.5), -1px -1px 7px rgba(57, 169, 226, 0.5);
 
 }
@@ -274,6 +314,7 @@ body{
     box-sizing: border-box;
     user-select: none;
     color: #4b4b4b;
+    font-family: AsapSemiBold, sans-serif;
 }
 .panel-status-bar{
     display: flex;
@@ -287,7 +328,7 @@ body{
 }
 .main-panel-name{
     display: block;
-    font-family: cabinRegular;
+    font-family: AsapSemiBold, sans-serif;
 
 }
 .sistem-number{
@@ -319,6 +360,13 @@ body{
     width: 200px;/* 
     background-color: #003159; */
     height: 100%;
+    margin: 20px;
+}
+.main-alas-name{
+    font-size: 20px;
+    border-left: 5px solid #046db5;
+    padding: 10px;
+    
 }
 
 /* 
@@ -339,6 +387,7 @@ body{
     background-color: white;
     cursor: pointer;
     box-sizing: border-box;
+    font-family: cabinRegular, sans-serif
 }
 .list .list-element:hover{
     background-color: rgb(197, 197, 197);

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Gradus&trade; | web view</title>
+    <title>Gradus&trade; | Visualização de dados</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./00_sources/01_img/01_visual/icon-gradus.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -21,9 +21,17 @@
                     Hospital Dr. Eudásio Barroso
                 </h1>
             </div>
-            <div class="user-set card-shadow">
-                <h3 class="user-name">Usuário Logado</h3>
-                <img src="./00_sources/01_img/icone.png" alt="Incone do usuário" class="user-img">
+
+            <div class="sis-status-set">
+                <div id="sis-time" class="sis-time">
+                    <span id="date"></span>
+                    <span id="rel"></span>
+                </div>
+                <div class="user-set">
+                    <h3 class="user-name">Usuário Logado</h3>
+                    <img src="./00_sources/01_img/icone.png" alt="Incone do usuário" class="user-img">
+                </div>
+
             </div>
         </header>
 
@@ -32,7 +40,7 @@
 
             <!-- menu lateral -->
             <aside class="lateral-menu">
-                <div class="op-painel">
+                <div class="op-panel">
                     <!-- opções do menu - esquerda -->
                     <div id="menu-alas" class="lateral-op" title="Ir para Alas do hospital">
                         <i class="fas fa-sitemap"></i>
@@ -46,7 +54,6 @@
                         <i class="fas fa-address-card"></i>
                         <h4 class="op-name">Pacientes</h4>
                     </div>
-
                 </div>
 
             </aside>
@@ -54,15 +61,7 @@
             <!-- painel de ações principal - direita -->
             <section class="main-panel">
 
-                <!-- trilha de migalhas - descontinuado --> 
-               <!--  <header id="breadcrumb" class="breadcrumb">
-                    <div class="step">
-                        <span>Home <i class="fas fa-chevron-right"></i></span> 
-                    </div>
-                </header> -->
-
-                <!-- painel principal - início  -->
-                <div id="home" class="home">
+                <div id="home-main" class="home" style="display: none;" >
                     <div id="panel-status-bar" class="panel-status-bar">
                         <h1 id="main-panel-name" class="main-panel-name">Painel Principal</h1>
                         <div id="sistem-number" class="sistem-number">
@@ -102,25 +101,45 @@
                             <h4 class="op-name">Emergência</h4>
                         </div>
                     </div>
+                </div>
 
-                    <div id="time-set" class="time-set">
 
+                <!-- painel das opções de ala -->
+                <div class="home">
+                    <div id="panel-alas" class="panel-alas">
+                        <!-- painel de opções -->
+                        <div id="alas-status-bar" class="panel-status-bar">
+                            <h1 id="main-panel-name" class="main-panel-name">Nome da ala*</h1>
+                            
+                            
+                            <!-- numero de pessoal da ala -->
+                            <div class="sistem-number">
+                                <!-- numeros de pessoal da ala -->
+                                <div id="pacientes-number" class="pacientes-number">
+                                    <h3>Pacientes</h3>
+                                    <p id="n-pacients">100</p>
+                                </div>
+                                <div id="medicos-number" class="medicos-number">
+                                    <h3>Médicos</h3>
+                                    <p id="n-doctors">14</p>
+                                </div>
+                                <div class="enfermeiros-numer enfermeiros-number">
+                                    <h3>Enfermeiros</h3>
+                                    <p id="n-nurses">30</p>
+                                </div>
+                            </div>
+                            <div id="alas-op-chart" class="alas-op-chart">
+                                <div class="alas-op"></div>
+                            </div>
+                        </div>
+                        <!-- opções de alas -->
+                        <div id="options-ala" class="options-ala">
+
+                        </div>
                     </div>
                 </div>
-                <!-- painel das opções -->
-                <div id="panel-alas" class="panel-alas">
-                    <!-- painel de opções -->
 
-                    <!-- <div class="main-panel-op card-shadow">
-                        <img src="./00_sources/01_img/01_visual/icon-gradus-branco.png">
-                        <h4 class="op-name"> Opção 01</h4>
-                    </div>-->
 
-                    <!-- opções de alas -->
-                    <div id="options-ala" class="options-ala">
-
-                    </div>
-                </div>
                 <div id="list" class="list">
                    <!--  <div class="list-element">
                         Nome 01
@@ -139,6 +158,7 @@
     </div>
 
     <script src="../02_libs/02_jQuery/jquery-3.3.1.min.js"></script>
+    <script src="../02_libs/03_printThis/printThis.js"></script>
     <script src="./script.js"></script>
 </body>
 
