@@ -1,39 +1,16 @@
 /* 
 ------fonts
 */
-@font-face{
-    font-family: bahn;
-    src: url("./00_sources/03_fonts/bahnschrift.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 @font-face {
-    font-family: cabinRegular; /* para textos */
+    font-family: 'Cabin'; /* para textos */
     src: url("./00_sources/03_fonts/Cabin-Regular.ttf");
     font-weight: normal;
     font-style: normal;
 }
 @font-face{
-    font-family: cabinBold;
-    src: url("./00_sources/03_fonts/Cabin-Bold.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face{
-    font-family: AsapRegular;
-    src: url("./00_sources/03_fonts/Asap/Asap-Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face{
-    font-family: AsapBold;
-    src: url("./00_sources/03_fonts/Asap/Asap-Bold.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face{
-    font-family: AsapSemiBuld;
+    font-family: 'Asap';
     src: url("./00_sources/03_fonts/Cabin-SemiBold.ttf");
     font-weight: normal;
     font-style: normal;
@@ -97,7 +74,7 @@ body{
     background-color: #046db5;
     box-sizing: border-box;
     user-select: none;
-    font-family: AsapSemiBold, sans-serif;
+    font-family: 'Asap', sans-serif;
 }
 .sis-upper-panel{
     display: block;
@@ -131,7 +108,7 @@ body{
     display: block;
     float: left;
     background-color: grey;
-    padding: 10px 10px;
+    padding: 8px 20px;
     margin-right: 10px;
     border-radius: 5px;
     background-color: #003159;
@@ -178,217 +155,63 @@ body{
     box-sizing: border-box;
     height: 100%;
     text-rendering:optimizeLegibility;
+    overflow: scroll;
+    background-color: #eeeeee;
 }
-
-/* 
-==== menu lateral ====
-*/
-.lateral-menu{
-    display: block;
-    float: left;
-    z-index: -1;
-    width: 250px;
-    height: 100vh;
-    background-color: #003159;
-    box-sizing: border-box;
-    overflow: hidden;
-    user-select: none;
-    color: white;
-    font-family: AsapSemiBold, sans-serif;
-}
-.lateral-op{
-    width: 100%;
+.sis-panel{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: left;
-    padding: 15px 30px;
-    box-sizing: border-box;
-    cursor: pointer;
-    border-bottom: 1px solid rgb(65, 76, 138);
-    border-right: 4px solid transparent;
-    transition: background 100ms;
-}
-.lateral-op:hover{
-    background-color: #012847;
-}
-
-.lateral-op i{
-    font-size: 15px;
-    margin-right: 10px;
-    display: block;
-    width: 15px;
-    height: 15px;
-    margin: 0px 20px 0px 0px;
-}
-.lateral-op h4{
-    display: block;
-    margin: 0px;
-    text-align: left;
-    font-weight: normal;
-}
-
-/* 
-==== painel principal ====
-*/
-.main-panel{
-    float: left;
-    width: calc(100% - 250px);
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    box-sizing: border-box;
-    font-family: AsapSemiBold, sans-serif;
-}
-
-/* 
-
-==== trilha de migalhas
-*/
-.breadcrumb{
-    display: flex;
-    float: left;
-    flex-direction: row;
-    align-content: center;
-    width: 100%;
-    padding: 10px 10px 10px 15px;
-    border-bottom: 1px solid rgb(206, 206, 206);
-}
-.breadcrumb .step{
-    color: #046db5;
-    margin-right: 10px;
-    min-width: 30px;
-    user-select: none;
-}
-.breadcrumb .step:hover{
-    color: #189af1;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-/*
-==== painel de opções
-*/
-.panel-alas{
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    color: rgb(63, 63, 63);
-}
-
-.panel-alas-op{
-    display: inline-block;
-    width: 200px;
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin: 10px;
-    padding: 15px 10px;
-    cursor: pointer;
-    user-select: none;
-    border: 2px solid transparent;
-}
-.panel-alas-op:hover{
-    border-color: #4caddd;
-    box-shadow: 1px 1px 7px rgba(57, 169, 226, 0.5), -1px -1px 7px rgba(57, 169, 226, 0.5);
-
-}
-.panel-alas-op img{
-    width: 40px;
-}
-
-/* 
-==== opções do painel home ====
-*/
-
-/* cabeçalho */
-.home{
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 15px 15px 0px 15px;
-    box-sizing: border-box;
-    user-select: none;
-    color: #4b4b4b;
-    font-family: AsapSemiBold, sans-serif;
-}
-.panel-status-bar{
-    display: flex;
-    width: 100%;
-    height: 60px;
-    margin-bottom: 25px;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgb(197, 197, 197);
+    width: 100%;
+    height: fit-content;
+    font-family: 'Asap', sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px 20px 10px 20px;
+;
 }
-.main-panel-name{
+.sis-panel h3{
+    font-size: 30px;
     display: block;
-    font-family: AsapSemiBold, sans-serif;
-
+    width: 400px;
+    margin: 0px;
 }
-.sistem-number{
+.sis-status-pessoal{
+    width: 500px;
+    height: fit-content;
+    float: right;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 500px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
 }
-.sistem-number div{
+.sis-number{
+    margin: 0px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 120px;
-    padding: 3px;
-    box-sizing: border-box;
-}
-.sistem-number div h3{
-    display: block;
     font-size: 13px;
-    font-family: cabinRegular;
 }
-
-/* seção das alas desse painel  */
-
-.main-alas{
-    width: 200px;/* 
-    background-color: #003159; */
-    height: 100%;
-    margin: 20px;
+.sis-number p{
+    display: block;
+    margin: 0px;
 }
-.main-alas-name{
-    font-size: 20px;
-    border-left: 5px solid #046db5;
-    padding: 10px;
-    
+.button-panel{
+    padding: 10px 0px;
+    margin: 0px 20px 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-
-/* 
-==== lista de elementos===
-*/
-.list{
-    width: 100%;
-    height: 100%;
-    border-radius: 3px;
-    padding: 15px 15px 0px 15px;
-    box-sizing: border-box;
-    overflow: scroll;
+.btn{
+    background-color: #046db5;
+    font-family: 'Asap';
 }
-.list .list-element{
-    width: 100%;
-    border-bottom: 1px solid rgb(197, 197, 197);
-    padding: 10px 7px;
-    background-color: white;
-    cursor: pointer;
-    box-sizing: border-box;
-    font-family: cabinRegular, sans-serif
+.general-list{
+    margin: 0px 20px;
+    font-family: 'Cabin', sans-serif;
+    margin-bottom: 50px;
 }
-.list .list-element:hover{
-    background-color: rgb(197, 197, 197);
+label{
+    margin: 0px;
 }

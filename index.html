@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Gradus&trade; | Visualização de dados</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./00_sources/01_img/01_visual/icon-gradus.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -34,132 +35,80 @@
 
             </div>
         </header>
-
         <!-- painel inferior -->
         <div class="app-body">
-
-            <!-- menu lateral -->
-            <aside class="lateral-menu">
-                <div class="op-panel">
-                    <!-- opções do menu - esquerda -->
-                    <div id="menu-alas" class="lateral-op" title="Ir para Alas do hospital">
-                        <i class="fas fa-sitemap"></i>
-                        <h4 class="op-name">Alas do Hospital</h4>
+            <div class="sis-panel">
+                <h3>Clínica médica</h3>
+                <div class="sis-status-pessoal">
+                    <div class="sis-number">
+                        <p class="nome">Pacientes</p>
+                        <p id="n-paciente"></p>
                     </div>
-                    <div id="menu-equipe" class="lateral-op" title="Exibir equipe médica">
-                        <i class="fas fa-user-md"></i>                        
-                        <h4 class="op-name">Equipe Médica</h4>
+                    <div class="sis-number">
+                        <p class="nome">Enfermeiros</p>
+                        <p id="n-enfermeiro"></p>
+                    
                     </div>
-                    <div id="menu-pacientes" class="lateral-op" title="Exibir os pacientes">
-                        <i class="fas fa-address-card"></i>
-                        <h4 class="op-name">Pacientes</h4>
-                    </div>
-                </div>
-
-            </aside>
-
-            <!-- painel de ações principal - direita -->
-            <section class="main-panel">
-
-                <div id="home-main" class="home" style="display: none;" >
-                    <div id="panel-status-bar" class="panel-status-bar">
-                        <h1 id="main-panel-name" class="main-panel-name">Painel Principal</h1>
-                        <div id="sistem-number" class="sistem-number">
-                            <div id="pacientes-number" class="pacientes-number">
-                                <h3>Pacientes</h3>
-                                <p id="n-pacients">100</p>
-                            </div>
-
-                            <div id="medicos-number" class="medicos-number">
-                                <h3>Médicos</h3>
-                                <p id="n-doctors">14</p>
-                            </div>
-
-                            <div class="enfermeiros-numer enfermeiros-number">
-                                <h3>Enfermeiros</h3>
-                                <p id="n-nurses">30</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="main-alas" class="main-alas">
-                        <h1 class="main-alas-name">Alas do hospital</h1>
-                        
-                        <div class="panel-alas-op card-shadow">
-                            <h4 class="op-name">Ambulatório</h4>
-                        </div>
-
-                        <div class="panel-alas-op card-shadow">
-                            <h4 class="op-name">Centro Cirúrgico</h4>
-                        </div>
-
-                        <div class="panel-alas-op card-shadow">
-                            <h4 class="op-name">Clinica Médica</h4>
-                        </div>
-
-                        <div class="panel-alas-op card-shadow">
-                            <h4 class="op-name">Emergência</h4>
-                        </div>
+                    <div class="sis-number">
+                        <p class="nome">Medicos</p>
+                        <p id="n-medico"></p>
                     </div>
                 </div>
-
-
-                <!-- painel das opções de ala -->
-                <div class="home">
-                    <div id="panel-alas" class="panel-alas">
-                        <!-- painel de opções -->
-                        <div id="alas-status-bar" class="panel-status-bar">
-                            <h1 id="main-panel-name" class="main-panel-name">Nome da ala*</h1>
-                            
-                            
-                            <!-- numero de pessoal da ala -->
-                            <div class="sistem-number">
-                                <!-- numeros de pessoal da ala -->
-                                <div id="pacientes-number" class="pacientes-number">
-                                    <h3>Pacientes</h3>
-                                    <p id="n-pacients">100</p>
-                                </div>
-                                <div id="medicos-number" class="medicos-number">
-                                    <h3>Médicos</h3>
-                                    <p id="n-doctors">14</p>
-                                </div>
-                                <div class="enfermeiros-numer enfermeiros-number">
-                                    <h3>Enfermeiros</h3>
-                                    <p id="n-nurses">30</p>
-                                </div>
-                            </div>
-                            <div id="alas-op-chart" class="alas-op-chart">
-                                <div class="alas-op"></div>
-                            </div>
-                        </div>
-                        <!-- opções de alas -->
-                        <div id="options-ala" class="options-ala">
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div id="list" class="list">
-                   <!--  <div class="list-element">
-                        Nome 01
-                    </div><div class="list-element">
-                        Nome 02
-                    </div><div class="list-element">
-                        Nome 03
-                    </div><div class="list-element">
-                        Nome 04 
-                    </div> -->
-                </div>
+            </div>
+            <div class="button-panel">
+                <button id="btn-paciente" class="btn btn-primary">Pacientes</button>
+                <button id="btn-medico" class="btn btn-primary">Equipe médica</button>
+                <button id="btn-" class="btn btn-primary">Procedimentos e exames</button>
                 
-            </section>
+            </div>
+            <div class="panel">
+                <div id="list-paciente" class="list-paciente general-list" style="display: block">
+                    <H3>Pacientes:</H3>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Nome:</label>
+                        </div>
+                        <div class="col">
+                            <label for=""></label>
+                        </div>
+                    </div>
+                    <ul id="lista-paciente" class="list-group list-group-flush">
+                    </ul>
+                </div>
+                <div id="list-equipe-medica" class="list-equipe-med general-list" style="display: none">
+                    <h3>Corpo clínico</h3>
+                    <h5>Médicos</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Nome:</label>
+                        </div>
+                        <div class="col">
+                            <label for="">CRM:</label>
+                        </div>
+                    </div>
+                    <ul id="list-medicos" class="list-group list-group-flush">
+
+                    </ul>
+                    <h5 for="list-enfermeiros">Enfermeiros</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Nome:</label>
+                        </div>
+                        <div class="col">
+                            <label for="">CRM:</label>
+                        </div>
+                    </div>
+                    <ul id="list-enfermeiros" class="list-group list-group-flush">
+
+                    </ul>
+                </div>
+            </div>
         </div>
-
     </div>
-
+    <script src="./00_sources/00_dataBase/banco.js"></script>
     <script src="../02_libs/02_jQuery/jquery-3.3.1.min.js"></script>
-    <script src="../02_libs/03_printThis/printThis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <script src="./script.js"></script>
 </body>
-
 </html>
