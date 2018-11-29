@@ -10,75 +10,91 @@ var sortByAtribute = function(prop) {
 
 const URL = "http://localhost:3000/";
 var alas = null;
-var pacientes = banco.sort(sortByAtribute('nome'));
+var pacientes = banco.sort(sortByAtribute("nome"));
 
 $("#n-paciente").append(pacientes.length);
 $("#n-medico").append(medicos.length);
-$('#n-enfermeiro').append(enfermeiros.length)
+$("#n-enfermeiro").append(enfermeiros.length);
 
-window.onload = function () {
-    $("#btn-paciente").click(function () {
-        $("#list-paciente").show();
-        $("#list-equipe-medica").hide();
-    })
-    $("#btn-medico").click(function () {
-        $("#list-paciente").hide();
-        $("#list-equipe-medica").show();
-    })
+window.onload = function() {
+  $("#btn-paciente").click(function() {
+    $("#list-paciente").show();
+    $("#list-equipe-medica").hide();
+  });
+  $("#btn-medico").click(function() {
+    $("#list-paciente").hide();
+    $("#list-equipe-medica").show();
+  });
 
-    relógio();
+  relógio();
 
-    for (let elem of pacientes) { // NOMES DOS PACIENTES
-        let nome = document.createElement('li');
-        
-        nome.classList.add('list-group-item')
-        nome.innerHTML = elem.nome.toUpperCase();
-        $("#lista-paciente").append(nome);
-    }
-    for (let elem of medicos) { //NOMES MÉDICOS
-        let item = document.createElement('li');
-        let linha = document.createElement('div');
-        let nome = document.createElement('div');
-        let crm = document.createElement('div');
-        
+  for (let elem of pacientes) {
+    // NOMES DOS PACIENTES
+    let item = document.createElement("li");
+    let linha = document.createElement("div");
+    let nome = document.createElement('div');
+    let sexo = document.createElement('div');
+    let dataNasc = document.createElement('div');
 
-        item.classList.add('list-group-item');
-        linha.classList.add('row');
-        nome.classList.add('col');
-        crm.classList.add('col');
+    item.classList.add('list-group-item');
+    linha.classList.add('row');
+    nome.classList.add('col');
+    sexo.classList.add('col');
+    dataNasc.classList.add('col');
 
-        nome.innerHTML = elem.nomeMedico.toUpperCase();
-        crm.innerHTML = elem.crm;
+    nome.innerHTML = elem.nome.toUpperCase();
+    sexo.innerHTML = elem.sexo;
+    dataNasc.innerHTML = elem.dataNasc;
 
-        linha.append(nome);
-        linha.append(crm);
-        item.append(linha);
-        //item.innerHTML = elem.nomeMedico.toUpperCase();
-        $("#list-medicos").append(item);
-    }
-    for (let elem of enfermeiros) {// LISTAR ENFERMEIROS
-        let item = document.createElement("li");
-        let linha = document.createElement('div');
-        let nome = document.createElement('div');
-        let coren = document.createElement('div');
+    linha.append(nome, sexo, dataNasc);
+    item.append(linha);
 
+    $("#lista-paciente").append(item);
+  }
+  for (let elem of medicos) {
+    //NOMES MÉDICOS
+    let item = document.createElement("li");
+    let linha = document.createElement("div");
+    let nome = document.createElement("div");
+    let crm = document.createElement("div");
 
-        item.classList.add('list-group-item');
-        linha.classList.add('row');
-        nome.classList.add('col');
-        coren.classList.add('col');
+    item.classList.add("list-group-item");
+    linha.classList.add("row");
+    nome.classList.add("col");
+    crm.classList.add("col");
 
-        nome.innerHTML = elem.nomeEnfermeiro.toUpperCase();
-        coren.innerHTML = elem.coren;
+    nome.innerHTML = elem.nomeMedico.toUpperCase();
+    crm.innerHTML = elem.crm;
 
-        linha.append(nome);
-        linha.append(coren);
-        item.append(linha);
+    linha.append(nome);
+    linha.append(crm);
+    item.append(linha);
 
-        $("#list-enfermeiros").append(item);
-    }
+    //item.innerHTML = elem.nomeMedico.toUpperCase();
+    $("#list-medicos").append(item);
+  }
+  for (let elem of enfermeiros) {
+    // LISTAR ENFERMEIROS
+    let item = document.createElement("li");
+    let linha = document.createElement("div");
+    let nome = document.createElement("div");
+    let coren = document.createElement("div");
+
+    item.classList.add("list-group-item");
+    linha.classList.add("row");
+    nome.classList.add("col");
+    coren.classList.add("col");
+
+    nome.innerHTML = elem.nomeEnfermeiro.toUpperCase();
+    coren.innerHTML = elem.coren;
+
+    linha.append(nome);
+    linha.append(coren);
+    item.append(linha);
+
+    $("#list-enfermeiros").append(item);
+  }
 };
-
 
 function relógio() {
   var hoje = new Date();
@@ -107,7 +123,6 @@ function verify(elem) {
   }
   return elem;
 }
-
 
 //requisições get gerais
 function getAlas(url) {
@@ -140,67 +155,6 @@ function getEquipeMedica(url) {
     }
   });
 }
-
-// interações
-
-/* $("#menu-alas").click(function () {
-    $("#options-ala").empty();    
-    connection(URL + "alas");
-    goHome(unidade);
-    $("#options-ala").show();
-    $("#list").empty();
-}); */
-
-$("#menu-alas").click(function() {
-  $("#menu-alas").css({
-    borderRight: "4px solid white",
-    backgroundColor: "#012847"
-  });
-  $("#menu-pacientes").css({
-    borderRight: "4px solid transparent",
-    backgroundColor: "transparent"
-  });
-  $("#menu-equipe").css({
-    borderRight: "4px solid transparent",
-    backgroundColor: "transparent"
-  });
-});
-
-$("#menu-equipe").click(function() {
-  $("#menu-equipe").css({
-    borderRight: "4px solid white",
-    backgroundColor: "#012847"
-  });
-  $("#menu-pacientes").css({
-    borderRight: "4px solid transparent",
-    backgroundColor: "transparent"
-  });
-  $("#menu-alas").css({
-    borderRight: "4px solid transparent",
-    backgroundColor: "transparent"
-  });
-});
-
-$("#menu-pacientes").click(function() {
-  $("#menu-pacientes").css({
-    borderRight: "4px solid white",
-    backgroundColor: "#012847"
-  });
-  $("#menu-equipe").css({
-    borderRight: "4px solid transparent",
-    backgroundColor: "transparent"
-  });
-  $("#menu-alas").css({
-    borderRight: "4px solid transparent",
-    backgroundColor: "transparent"
-  });
-
-  $("#options-ala").hide();
-  $("#list").empty();
-  getPacientes(URL);
-  addNameList(pacientes);
-  $("#list").show();
-});
 
 $("#sistem-logo").click(function() {
   location.reload(true);
